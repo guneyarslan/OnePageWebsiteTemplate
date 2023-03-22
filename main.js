@@ -7,59 +7,59 @@ document.addEventListener("DOMContentLoaded", function() {
   }
 
   function showPage(pageId) {
-    // Tüm sayfaları gizle
+    // Hiding all pages
     hideAllPages();
 
-    // Seçilen sayfayı göster
+    // Show the choosen page 
     var page = document.getElementById(pageId);
     page.style.display = "block";
   }
   
-  // Sayfa 1'e tıklanırsa
+  // When click "home"
   document.getElementById("home").addEventListener("click", function () {
     showPage("home");
   });
 
-  // Sayfa 2'ye tıklanırsa
+  // When click "services"
   document.getElementById("services").addEventListener("click", function () {
     showPage("services");
   });
 
-  // Sayfa 3'e tıklanırsa
+  // When click "contact"
   document.getElementById("contact").addEventListener("click", function () {
     showPage("contact");
   });
 
 
-  // Seçicilerle ilgili HTML öğelerini alın
+  // Selectors
   const homeLink = document.querySelector("nav ul li:nth-child(1) a");
   const servicesLink = document.querySelector("nav ul li:nth-child(2) a");
   const contactLink = document.querySelector("nav ul li:nth-child(3) a");
 
-  // Home linkine tıklama olayı ekle ve diğer linklerin etkinliğini kaldır
+  // Activate "Home" page when click and deactivate others
   homeLink.addEventListener("click", (event) => {
     event.preventDefault();
     homeLink.classList.add("active");
     servicesLink.classList.remove("active");
     contactLink.classList.remove("active");
-    showPage("home"); // sayfa gösterme işlemi eklendi
+    showPage("home");
   });
 
-  // Services linkine tıklama olayı ekle ve diğer linklerin etkinliğini kaldır
+  // Activate "Services" page when click and deactivate others
   servicesLink.addEventListener("click", (event) => {
     event.preventDefault();
     homeLink.classList.remove("active");
     servicesLink.classList.add("active");
     contactLink.classList.remove("active");
-    showPage("services"); // sayfa gösterme işlemi eklendi
+    showPage("services");
   });
 
-  // Contact linkine tıklama olayı ekle ve diğer linklerin etkinliğini kaldır
+  // Activate "Contact" page when click and deactivate others
   contactLink.addEventListener("click", (event) => {
     event.preventDefault();
     homeLink.classList.remove("active");
     servicesLink.classList.remove("active");
     contactLink.classList.add("active");
-    showPage("contact"); // sayfa gösterme işlemi eklendi
+    showPage("contact");
   });
 });
